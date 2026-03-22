@@ -8,10 +8,9 @@ long long get_gcd(long long a, long long b) {
     a = llabs(a); 
     b = llabs(b);
     while (b) {
-        a %= b;
-        long long temp = a; 
-        a = b; 
-        b = temp;
+        long long temp = b;
+        b = a % b;
+        a = temp;
     }
     return a;
 }
@@ -42,7 +41,7 @@ Fraction create_from_string(char* str) {
     }
     else if (strchr(str, '.')) { 
         double val = atof(str);
-        long long precision = 1000000; 
+        long long precision = 100000000; 
         f.num = (long long)(val * precision);
         f.den = precision;
     }
