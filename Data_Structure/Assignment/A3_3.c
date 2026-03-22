@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "my_fraction.h"
+#include "A3_1/my_fraction.h"
 
 int main(int argc, char** argv) {
     if (argc != 3) {
