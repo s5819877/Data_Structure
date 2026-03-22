@@ -9,4 +9,4 @@ void print_fraction(Fraction f); // 분수 출력
 Fraction add(Fraction f1, Fraction f2); // 덧셈  
 Fraction sub(Fraction f1, Fraction f2); // 뺄셈  
 Fraction mul(Fraction f1, Fraction f2); // 곱셈  
-Fraction div_frac(Fraction f1, Fraction f2); // 나눗셈  
+Fraction div_frac(Fraction f1, Fraction f2); // git 나눗셈  
