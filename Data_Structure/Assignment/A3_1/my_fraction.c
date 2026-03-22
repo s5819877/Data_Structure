@@ -56,9 +56,9 @@ Fraction create_from_string(char* str) {
 void print_fraction(Fraction f) {
     f = simplify(f);
     if (f.den == 1) 
-        printf("%lld\n", f.num);
+        printf("%lld", f.num);
     else 
-        printf("%lld/%lld\n", f.num, f.den);
+        printf("%lld/%lld", f.num, f.den);
 }
 
 Fraction add(Fraction f1, Fraction f2) {
