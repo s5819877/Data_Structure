@@ -41,7 +41,7 @@ Fraction create_from_string(char* str) {
     }
     else if (strchr(str, '.')) { 
         double val = atof(str);
-        long long precision = 100000000; 
+        long long precision = 1000000; 
         f.num = (long long)(val * precision);
         f.den = precision;
     }
