@@ -128,9 +128,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Assignment\A1_1.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Assignment\A1_2.c" />
+    <ClCompile Include="Assignment\A2_1.c" />
+    <ClCompile Include="Assignment\A2_2.c" />
+    <ClCompile Include="Assignment\A3_1\main.c" />
+    <ClCompile Include="Assignment\A3_1\my_fraction.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Assignment\A3_1\my_fraction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assignment\A3_1\readme.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

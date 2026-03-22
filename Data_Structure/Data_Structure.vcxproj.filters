@@ -16,6 +16,12 @@
     <Filter Include="소스 파일\Assignment">
       <UniqueIdentifier>{513db81b-7e3d-4bcb-b2cb-6d23fa9e2ca5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Assignment\A3_1">
+      <UniqueIdentifier>{9dcbc2bb-a8d2-466f-9068-b7a14c1ac0d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Assignment\A3_2">
+      <UniqueIdentifier>{107645fc-63c1-4b23-b670-8764ba657eef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assignment\A1_1.c">
@@ -24,5 +30,27 @@
     <ClCompile Include="Assignment\A1_2.c">
       <Filter>소스 파일\Assignment</Filter>
     </ClCompile>
+    <ClCompile Include="Assignment\A2_1.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A2_2.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A3_1\my_fraction.c">
+      <Filter>소스 파일\Assignment\A3_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A3_1\main.c">
+      <Filter>소스 파일\Assignment\A3_1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Assignment\A3_1\my_fraction.h">
+      <Filter>소스 파일\Assignment\A3_1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assignment\A3_1\readme.md">
+      <Filter>소스 파일\Assignment\A3_1</Filter>
+    </None>
   </ItemGroup>
 </Project>
