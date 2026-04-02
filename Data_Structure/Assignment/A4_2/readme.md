@@ -16,7 +16,7 @@ n = 44 -> 누적시간 : 약 24초 / 단일시간 : 약 8초
 
 - 해당 과제의 코드  
 
-'''c
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include "../A3_2/my_math.h" 
@@ -40,7 +40,7 @@ int main() {
 
     return 0;
 }
-'''
+```
 
 - Big-O 계산식  
 T(n) = T(n-1) + T(n-2) + O(1) -> O(2^n)  
