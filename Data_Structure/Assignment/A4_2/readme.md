@@ -15,39 +15,44 @@ n = 44 -> 누적시간 : 약 24초 / 단일시간 : 약 8초
 따라서 피보나치 수열의 시간복잡도는 O(2^n)으로 판단된다.  
 
 - 해당 과제의 코드  
-'''c  
-#include <stdio.h>  
-#include <stdlib.h>  
-#include "../A3_2/my_math.h"   
 
-long long fibonacci(int n) {  
-    if (n <= 1)  
-        return n;  
-    return fibonacci(n - 1) + fibonacci(n - 2);  
-}  
+'''c
+#include <stdio.h>
+#include <stdlib.h>
+#include "../A3_2/my_math.h" 
 
-int main() {  
-    int n;  
+long long fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
-    for (n = 5; n <= 44; n++) { // 최대 n 값을 바꿔가며 측정  
-        long long fn = fibonacci(n);  
-        long long fn_1 = fibonacci(n - 1);  
-        long long g = gcd(fn, fn_1);  
+int main() {
+    int n;
 
-        printf("n = %d, F(n) = %lld, F(n-1) = %lld, GCD = %lld\n", n, fn, fn_1, g);  
-    }  
+    for (n = 5; n <= 44; n++) { // 최대 n 값을 바꿔가며 측정
+        long long fn = fibonacci(n);
+        long long fn_1 = fibonacci(n - 1);
+        long long g = gcd(fn, fn_1);
 
-    return 0;  
-}  '''  
+        printf("n = %d, F(n) = %lld, F(n-1) = %lld, GCD = %lld\n", n, fn, fn_1, g);
+    }
+
+    return 0;
+}
+'''
 
 - Big-O 계산식  
 T(n) = T(n-1) + T(n-2) + O(1) -> O(2^n)  
 여기서 O(1)은 덧셈 연산을 나타낸다.  
 
 - 프로파일링한 그래프  
-n=42일때
+
+n=42일때  
 ![n=42일때](./n=42.png)
-n=43일때
+
+n=43일때  
 ![n=43일때](./n=43.png)
-n=44일때
+
+n=44일때  
 ![n=44일때](./n=44.png)
