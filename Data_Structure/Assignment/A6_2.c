@@ -67,20 +67,27 @@ int main() {
         printf("\b\b= %d\n", sum);
     }
 
-    int diagsum[2] = { 0, 0 };
+    int *diagsum = (int *)malloc(2 * sizeof(int));
+    *(diagsum + 0) = 0;
+    *(diagsum + 1) = 0;
+
     printf("\n<각 대각선의 합>\n");
     for (i = 0; i < N; i++) {
-        diagsum[0] += *(arr + i * N + i);           
-        diagsum[1] += *(arr + i * N + (N - 1 - i)); 
+        *(diagsum + 0) += *(arr + i * N + i);           
+        *(diagsum + 1) += *(arr + i * N + (N - 1 - i)); 
     }
+
     printf("대각선 1 : ");
-    for (i = 0; i < N; i++) printf("%d + ", *(arr + i * N + i));
-    printf("\b\b= %d\n", diagsum[0]);
+    for (i = 0; i < N; i++) 
+        printf("%d + ", *(arr + i * N + i));
+    printf("\b\b= %d\n", *(diagsum = 0));
 
     printf("대각선 2 : ");
-    for (i = 0; i < N; i++) printf("%d + ", *(arr + i * N + (N - 1 - i)));
-    printf("\b\b= %d\n", diagsum[1]);
+    for (i = 0; i < N; i++) 
+        printf("%d + ", *(arr + i * N + (N - 1 - i)));
+    printf("\b\b= %d\n", *(diagsum + 1));
 
+    free(diagsum);
     free(arr);
 
     return 0;
