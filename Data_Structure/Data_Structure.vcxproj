@@ -133,14 +133,48 @@
     <ClCompile Include="Assignment\A1_2.c" />
     <ClCompile Include="Assignment\A2_1.c" />
     <ClCompile Include="Assignment\A2_2.c" />
-    <ClCompile Include="Assignment\A3_1\main.c" />
+    <ClCompile Include="Assignment\A3_1\m3_1.c" />
     <ClCompile Include="Assignment\A3_1\my_fraction.c" />
+    <ClCompile Include="Assignment\A3_2\m3_2.c" />
+    <ClCompile Include="Assignment\A3_2\my_math.c" />
+    <ClCompile Include="Assignment\A3_3.c" />
+    <ClCompile Include="Assignment\A4_2\my_fibonacci.c" />
+    <ClCompile Include="Assignment\A5_1.c" />
+    <ClCompile Include="Assignment\A5_2.c" />
+    <ClCompile Include="Assignment\A6_1.c" />
+    <ClCompile Include="Assignment\A6_2.c" />
+    <ClCompile Include="Assignment\A7\A7_1.c" />
+    <ClCompile Include="Assignment\A7\A7_2.c" />
+    <ClCompile Include="Assignment\A8\A8_fibo1.c" />
+    <ClCompile Include="Assignment\A8\A8_fibo2.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assignment\A3_1\my_fraction.h" />
+    <ClInclude Include="Assignment\A3_2\my_math.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assignment\A3_1\readme.md" />
+    <None Include="Assignment\A3_2\readme.md" />
+    <None Include="Assignment\A4_1.md" />
+    <None Include="Assignment\A4_2\my_fibonacci.md" />
+    <None Include="Assignment\A8\A8.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assignment\A4_2\n=42.png" />
+    <Image Include="Assignment\A4_2\n=43.png" />
+    <Image Include="Assignment\A4_2\n=44.png" />
+    <Image Include="Assignment\A8\A8_fibo1_N=46.png" />
+    <Image Include="Assignment\A8\A8_fibo1_N=47.png" />
+    <Image Include="Assignment\A8\A8_fibo1_N=48.png" />
+    <Image Include="Assignment\A8\A8_fibo1_N=49.png" />
+    <Image Include="Assignment\A8\A8_fibo2_N=10억.png" />
+    <Image Include="Assignment\A8\A8_fibo2_N=20억.png" />
+    <Image Include="Assignment\A8\A8_fibo2_N=30억.png" />
+    <Image Include="Assignment\A8\A8_fibo2_N=일억.png" />
+    <Image Include="Assignment\A8\A8_fibo2_N=천만.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assignment\A7\name_list.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

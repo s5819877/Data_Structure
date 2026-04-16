@@ -22,6 +22,15 @@
     <Filter Include="소스 파일\Assignment\A3_2">
       <UniqueIdentifier>{107645fc-63c1-4b23-b670-8764ba657eef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Assignment\A4_2">
+      <UniqueIdentifier>{31ef1d5d-77e0-4471-87ef-91e48c797467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Assignment\A7">
+      <UniqueIdentifier>{d4ac6baf-706b-4d70-afa6-599695db6ac8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Assignment\A8">
+      <UniqueIdentifier>{fac01214-e118-44df-8a70-241fb5a75def}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assignment\A1_1.c">
@@ -39,18 +48,112 @@
     <ClCompile Include="Assignment\A3_1\my_fraction.c">
       <Filter>소스 파일\Assignment\A3_1</Filter>
     </ClCompile>
-    <ClCompile Include="Assignment\A3_1\main.c">
+    <ClCompile Include="Assignment\A3_2\my_math.c">
+      <Filter>소스 파일\Assignment\A3_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A3_2\m3_2.c">
+      <Filter>소스 파일\Assignment\A3_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A3_1\m3_1.c">
       <Filter>소스 파일\Assignment\A3_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A3_3.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A4_2\my_fibonacci.c">
+      <Filter>소스 파일\Assignment\A4_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A5_1.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A5_2.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A6_1.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A6_2.c">
+      <Filter>소스 파일\Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A7\A7_1.c">
+      <Filter>소스 파일\Assignment\A7</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A7\A7_2.c">
+      <Filter>소스 파일\Assignment\A7</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A8\A8_fibo1.c">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A8\A8_fibo2.c">
+      <Filter>소스 파일\Assignment\A8</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assignment\A3_1\my_fraction.h">
       <Filter>소스 파일\Assignment\A3_1</Filter>
     </ClInclude>
+    <ClInclude Include="Assignment\A3_2\my_math.h">
+      <Filter>소스 파일\Assignment\A3_2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assignment\A3_1\readme.md">
       <Filter>소스 파일\Assignment\A3_1</Filter>
     </None>
+    <None Include="Assignment\A3_2\readme.md">
+      <Filter>소스 파일\Assignment\A3_2</Filter>
+    </None>
+    <None Include="Assignment\A4_1.md">
+      <Filter>소스 파일\Assignment</Filter>
+    </None>
+    <None Include="Assignment\A4_2\my_fibonacci.md">
+      <Filter>소스 파일\Assignment\A4_2</Filter>
+    </None>
+    <None Include="Assignment\A8\A8.md">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assignment\A4_2\n=42.png">
+      <Filter>소스 파일\Assignment\A4_2</Filter>
+    </Image>
+    <Image Include="Assignment\A4_2\n=43.png">
+      <Filter>소스 파일\Assignment\A4_2</Filter>
+    </Image>
+    <Image Include="Assignment\A4_2\n=44.png">
+      <Filter>소스 파일\Assignment\A4_2</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo1_N=46.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo1_N=47.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo1_N=48.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo1_N=49.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo2_N=10억.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo2_N=20억.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo2_N=30억.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo2_N=일억.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+    <Image Include="Assignment\A8\A8_fibo2_N=천만.png">
+      <Filter>소스 파일\Assignment\A8</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assignment\A7\name_list.txt">
+      <Filter>소스 파일\Assignment\A7</Filter>
+    </Text>
   </ItemGroup>
 </Project>
