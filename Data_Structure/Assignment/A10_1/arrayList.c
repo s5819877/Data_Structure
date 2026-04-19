@@ -124,3 +124,6 @@ void printArrayList(arrayList* al) {
 	
 	printf("\n");
 }
+
+//응
+
