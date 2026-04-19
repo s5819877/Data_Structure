@@ -121,9 +121,5 @@ void printArrayList(arrayList* al) {
 	for (int i = 0; i < al->size; i++) {
 		printf("[%d] : %d ", i, al->data[i]);
 	}
-	
 	printf("\n");
 }
-
-//응
-
