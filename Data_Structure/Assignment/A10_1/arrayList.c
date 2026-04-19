@@ -48,11 +48,6 @@ int insertArrayList(arrayList* al,
 		return 0;
 	}
 
-	if (item <= 0) {
-		printf("양의 정수만 입력 가능합니다.\n");
-		return 0;
-	}
-
 	if (isFullArrayList(al)) {
 		int newCapacity = al->capacity * 2;
 
