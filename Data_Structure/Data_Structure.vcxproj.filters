@@ -31,6 +31,15 @@
     <Filter Include="소스 파일\Assignment\A8">
       <UniqueIdentifier>{fac01214-e118-44df-8a70-241fb5a75def}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Assignment\A9">
+      <UniqueIdentifier>{c1541ff5-b5ae-4110-9225-155c574ec87e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Assignment\A10_1">
+      <UniqueIdentifier>{ac63f800-c700-40a3-8504-ed33c5df9c50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Assignment\A10_2">
+      <UniqueIdentifier>{50094808-b114-474e-9341-69f8fa687859}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assignment\A1_1.c">
@@ -87,6 +96,27 @@
     <ClCompile Include="Assignment\A8\A8_fibo2.c">
       <Filter>소스 파일\Assignment\A8</Filter>
     </ClCompile>
+    <ClCompile Include="Assignment\A9\arrayList9_1.c">
+      <Filter>소스 파일\Assignment\A9</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A9\m9_1.c">
+      <Filter>소스 파일\Assignment\A9</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A10_2\sparseMatrix.c">
+      <Filter>소스 파일\Assignment\A10_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A10_1\arrayList10_1.c">
+      <Filter>소스 파일\Assignment\A10_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A10_1\m10_1.c">
+      <Filter>소스 파일\Assignment\A10_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A10_2\arrayList.c">
+      <Filter>소스 파일\Assignment\A10_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Assignment\A10_2\main.c">
+      <Filter>소스 파일\Assignment\A10_2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assignment\A3_1\my_fraction.h">
@@ -94,6 +124,18 @@
     </ClInclude>
     <ClInclude Include="Assignment\A3_2\my_math.h">
       <Filter>소스 파일\Assignment\A3_2</Filter>
+    </ClInclude>
+    <ClInclude Include="Assignment\A9\arrayList9_1.h">
+      <Filter>소스 파일\Assignment\A9</Filter>
+    </ClInclude>
+    <ClInclude Include="Assignment\A10_2\sparseMatrix.h">
+      <Filter>소스 파일\Assignment\A10_2</Filter>
+    </ClInclude>
+    <ClInclude Include="Assignment\A10_1\arrayList10_1.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Assignment\A10_2\arrayList.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

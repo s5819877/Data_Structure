@@ -127,6 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Assignment\A10_1\arrayList10_1.c" />
+    <ClCompile Include="Assignment\A10_1\m10_1.c" />
+    <ClCompile Include="Assignment\A10_2\arrayList.c" />
+    <ClCompile Include="Assignment\A10_2\main.c" />
+    <ClCompile Include="Assignment\A10_2\sparseMatrix.c" />
     <ClCompile Include="Assignment\A1_1.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -147,10 +152,16 @@
     <ClCompile Include="Assignment\A7\A7_2.c" />
     <ClCompile Include="Assignment\A8\A8_fibo1.c" />
     <ClCompile Include="Assignment\A8\A8_fibo2.c" />
+    <ClCompile Include="Assignment\A9\arrayList9_1.c" />
+    <ClCompile Include="Assignment\A9\m9_1.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assignment\A10_1\arrayList10_1.h" />
+    <ClInclude Include="Assignment\A10_2\arrayList.h" />
+    <ClInclude Include="Assignment\A10_2\sparseMatrix.h" />
     <ClInclude Include="Assignment\A3_1\my_fraction.h" />
     <ClInclude Include="Assignment\A3_2\my_math.h" />
+    <ClInclude Include="Assignment\A9\arrayList9_1.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assignment\A3_1\readme.md" />
