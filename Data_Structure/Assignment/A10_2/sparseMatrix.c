@@ -85,11 +85,11 @@ sparseMatrix* transposeSparseMatrix(sparseMatrix* sm, int* moveCount) {
 sparseMatrix* addSparseMatrix(sparseMatrix* sm1, sparseMatrix* sm2) {
     sparseMatrix* smResult = createSparseMatrix(sm1->rows, sm1->cols);
 
-    for (int i = 0; i < sizeArrayList(sm1->list); i++) {
+    for (int i = 0; i < sizeArrayList(sm1->list); i++) { // 범위 수정
         elementArrayList nonZeroOfSum1 = getItemArrayList(sm1->list, i);
 
         int j;
-        for (j = 0; j < sizeArrayList(sm2->list); j++) {
+        for (j = 0; j < sizeArrayList(sm2->list); j++) { // 범위 수정
             elementArrayList nonZeroOfSum2
                 = getItemArrayList(sm2->list, j);
             if (nonZeroOfSum1.row == nonZeroOfSum2.row &&
@@ -97,8 +97,8 @@ sparseMatrix* addSparseMatrix(sparseMatrix* sm1, sparseMatrix* sm2) {
                 insertArrayList(smResult->list, sizeArrayList(smResult->list),
                     (elementArrayList) {
                     nonZeroOfSum1.row,
-                        nonZeroOfSum1.col,
-                        nonZeroOfSum1.value + nonZeroOfSum2.value
+                    nonZeroOfSum1.col,
+                    nonZeroOfSum1.value + nonZeroOfSum2.value
                 });
                 break;
             }
@@ -110,22 +110,22 @@ sparseMatrix* addSparseMatrix(sparseMatrix* sm1, sparseMatrix* sm2) {
         }
     }
 
-    for (int j = 0; j < sizeArrayList(sm2->list); j++) {
+    for (int j = 0; j < sizeArrayList(sm2->list); j++) { //sm2에 남은 원소 추가
         elementArrayList nonZeroOfSum2
             = getItemArrayList(sm2->list, j);
 
-        int found = 0;
+        int find = 0;
         for (int i = 0; i < sizeArrayList(sm1->list); i++) {
             elementArrayList nonZeroOfSum1
                 = getItemArrayList(sm1->list, i);
             if (nonZeroOfSum1.row == nonZeroOfSum2.row &&
                 nonZeroOfSum1.col == nonZeroOfSum2.col) {
-                found = 1;
+                find = 1;
                 break;
             }
         }
 
-        if (!found) {
+        if (!find) {
             insertArrayList(smResult->list, sizeArrayList(smResult->list),
                 nonZeroOfSum2);
         }
