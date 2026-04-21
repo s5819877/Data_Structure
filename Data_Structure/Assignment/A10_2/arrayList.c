@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
 #include "arrayList.h"
@@ -48,21 +48,6 @@ int insertArrayList(arrayList* al,
 		return 0;
 	}
 
-	if (isFullArrayList(al)) {
-		int newCapacity = al->capacity * 2;
-
-		elementArrayList* newData =
-			realloc(al->data, sizeof(elementArrayList) * newCapacity);
-
-		if (newData == NULL) {
-			fprintf(stderr, "메모리 재할당 실패\n");
-			return 0;
-		}
-
-		al->data = newData;
-		al->capacity = newCapacity;
-	}
-
 	for (int i = al->size - 1; i >= pos; i--) {
 		al->data[i + 1] = al->data[i];
 	}
@@ -73,30 +58,9 @@ int insertArrayList(arrayList* al,
 	return 1;
 }
 
-int insertSortedArrayList(arrayList* al, elementArrayList item) {
-
-	int pos = 0;
-
-	while (pos < al->size) {
-
-		elementArrayList cur = al->data[pos];
-
-		if (cur.row > item.row ||
-			(cur.row == item.row && cur.col > item.col)) {
-			break;
-		}
-
-		pos++;
-	}
-
-	return insertArrayList(al, pos, item);
-}
-
 elementArrayList deleteArrayList(
 	arrayList* al, int pos) {
 	if (pos < 0 || pos > al->size - 1) {
-		fprintf(stderr, "범위 벗어남\n");
-		exit(1);
 	}
 
 	elementArrayList item = al->data[pos];
@@ -110,8 +74,10 @@ elementArrayList deleteArrayList(
 	return item;
 }
 
-void initArrayList(arrayList* al) {
-	al->size = 0;
+int initArrayList(arrayList* al) {
+	for (int i = al->size - 1; i >= 0; i--) {
+		deleteArrayList(al, i);
+	}
 }
 
 elementArrayList getItemArrayList(
@@ -131,13 +97,12 @@ int replaceItemArrayList(arrayList* al,
 }
 
 void printArrayList(arrayList* al) {
-	printf("희소 행렬 순차 리스트\n");
+	printf("Sparse Matrix Array List: ");
 
-	printf("cap: %d, size: %d\n", al->capacity, al->size);
+	printf("Cap: %d, size: %d\n", al->capacity, al->size);
 
 	for (int i = 0; i < al->size; i++) {
-		printf("(%d, %d, %d) ", al->data[i].row,
+		printf("(%d %d %d) ", al->data[i].row,
 			al->data[i].col, al->data[i].value);
 	}
-	printf("\n");
 }

@@ -1,31 +1,29 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 #include "sparseMatrix.h"
 
 int main() {
-	srand(time(NULL));
+    srand(time(NULL));
 
-	sparseMatrix* sm = createSparseMatrix(10, 10);
+    sparseMatrix* sm = createSparseMatrix(10, 10);
+    randomSparseMatrix(sm, 20);
 
-	randomSparseMatrix(sm, 20);
+    printf("=== 원본 희소행렬 ===\n");
+    printSparseMatrix(sm);
 
-	printf("Original Matrix\n");
-	printSparseMatrix(sm);
+    int moveCount = 0;
+    sparseMatrix* transposed = transposeSparseMatrix(sm, &moveCount);
 
-	int moveCount = 0;
+    printf("\n=== 전치행렬 ===\n");
+    printSparseMatrix(transposed);
 
-	sparseMatrix* transposed =
-		transposeSparseMatrix(sm, &moveCount);
+    printf("\n데이터 이동 횟수: %d\n", moveCount);
 
-	printf("\nTransposed Matrix\n");
-	printSparseMatrix(transposed);
+    sparseMatrix* smsum = addSparseMatrix(sm, transposed);
+    printf("\n=== 행렬 합 ===\n");
+    printSparseMatrix(smsum);
 
-	printf("\n데이터 이동 횟수: %d\n", moveCount);
-
-	sparseMatrix* smresult =  addSparseMatrix(sm, transposed);
-	printSparseMatrix(smresult);
-
-	return 0;
+    return 0;
 }

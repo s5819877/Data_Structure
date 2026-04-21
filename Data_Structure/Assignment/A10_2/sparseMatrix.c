@@ -1,134 +1,137 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
 #include "sparseMatrix.h"
 
 sparseMatrix* createSparseMatrix(int rows, int cols) {
-	sparseMatrix* sm = (sparseMatrix*)malloc(sizeof(sparseMatrix));
-	sm->rows = rows;
-	sm->cols = cols;
-	sm->list = createArrayList(rows * cols);
-	return sm;
+    sparseMatrix* sm = (sparseMatrix*)malloc(sizeof(sparseMatrix));
+    sm->rows = rows;
+    sm->cols = cols;
+    sm->list = createArrayList(rows * cols);
+    return sm;
 }
 
 void addElementSparseMatrix(sparseMatrix* sm, int row, int col, int value) {
-	int size;
-	size = sizeArrayList(sm->list);
-
-	insertArrayList(sm->list, size, (elementArrayList) { row, col, value });
+    int size = sizeArrayList(sm->list);
+    insertArrayList(sm->list, size, (elementArrayList) { row, col, value });
 }
 
 void printSparseMatrix(sparseMatrix* sm) {
-	printf("희소행렬입니다 (%d x %d)\n", sm->rows, sm->cols);
-	printArrayList(sm->list);
+    printf("Sparse Matrix (%d x %d):\n", sm->rows, sm->cols);
+
+    // 2D 행렬 형태로 출력
+    for (int r = 0; r < sm->rows; r++) {
+        for (int c = 0; c < sm->cols; c++) {
+            int val = 0;
+            for (int i = 0; i < sizeArrayList(sm->list); i++) {
+                elementArrayList e = getItemArrayList(sm->list, i);
+                if (e.row == r && e.col == c) {
+                    val = e.value;
+                    break;
+                }
+            }
+            printf("%4d", val);
+        }
+        printf("\n");
+    }
+
+    // 기존 리스트 출력
+    printArrayList(sm->list);
+    printf("\n");
 }
 
 void randomSparseMatrix(sparseMatrix* sm, int count) {
+    int num = 0;
+    while (num < count) {
+        int r = rand() % sm->rows;
+        int c = rand() % sm->cols;
+        int v = rand() % 100 + 1;
 
-	int num = 0;
+        int dup = 0;
+        for (int i = 0; i < sizeArrayList(sm->list); i++) {
+            elementArrayList e = getItemArrayList(sm->list, i);
+            if (e.row == r && e.col == c) {
+                dup = 1;
+                break;
+            }
+        }
 
-	while (num < count) {
-
-		int r = rand() % sm->rows;
-		int c = rand() % sm->cols;
-		int v = rand() % 100 + 1;
-
-		int dup = 0;
-
-		for (int i = 0; i < sm->list->size; i++) {
-
-			if (sm->list->data[i].row == r &&
-				sm->list->data[i].col == c) {
-				dup = 1;
-				break;
-			}
-		}
-
-		if (dup) 
-			continue;
-
-		elementArrayList e;
-		e.row = r;
-		e.col = c;
-		e.value = v;
-
-		insertSortedArrayList(sm->list, e);
-
-		num++;
-	}
+        if (!dup) {
+            addElementSparseMatrix(sm, r, c, v);
+            num++;
+        }
+    }
 }
 
 sparseMatrix* transposeSparseMatrix(sparseMatrix* sm, int* moveCount) {
+    sparseMatrix* result = createSparseMatrix(sm->cols, sm->rows);
+    *moveCount = 0;
 
-	sparseMatrix* result =
-		createSparseMatrix(sm->cols, sm->rows);
+    int size = sizeArrayList(sm->list);
+    for (int c = 0; c < sm->cols; c++) {
+        for (int i = 0; i < size; i++) {
+            elementArrayList e = getItemArrayList(sm->list, i);
+            if (e.col == c) {
+                insertArrayList(result->list, sizeArrayList(result->list),
+                    (elementArrayList) {
+                    e.col, e.row, e.value
+                });
+                (*moveCount)++;  // 삽입(쓰기)
+            }
+        }
+    }
 
-	for (int i = 0; i < sizeArrayList(sm->list); i++) {
-
-		elementArrayList e =
-			getItemArrayList(sm->list, i);
-
-		elementArrayList t =
-		{ e.col, e.row, e.value };
-
-		insertSortedArrayList(result->list, t);
-
-		(*moveCount)++;
-	}
-
-	return result;
+    return result;
 }
 
 sparseMatrix* addSparseMatrix(sparseMatrix* sm1, sparseMatrix* sm2) {
+    sparseMatrix* smResult = createSparseMatrix(sm1->rows, sm1->cols);
 
-	sparseMatrix* smresult =
-		createSparseMatrix(sm1->rows, sm1->cols);
+    for (int i = 0; i < sizeArrayList(sm1->list); i++) {
+        elementArrayList nonZeroOfSum1 = getItemArrayList(sm1->list, i);
 
-	int i = 0, j = 0;
+        int j;
+        for (j = 0; j < sizeArrayList(sm2->list); j++) {
+            elementArrayList nonZeroOfSum2
+                = getItemArrayList(sm2->list, j);
+            if (nonZeroOfSum1.row == nonZeroOfSum2.row &&
+                nonZeroOfSum1.col == nonZeroOfSum2.col) {
+                insertArrayList(smResult->list, sizeArrayList(smResult->list),
+                    (elementArrayList) {
+                    nonZeroOfSum1.row,
+                        nonZeroOfSum1.col,
+                        nonZeroOfSum1.value + nonZeroOfSum2.value
+                });
+                break;
+            }
+        }
 
-	while (i < sm1->list->size && j < sm2->list->size) {
+        if (j == sizeArrayList(sm2->list)) {
+            insertArrayList(smResult->list, sizeArrayList(smResult->list),
+                nonZeroOfSum1);
+        }
+    }
 
-		elementArrayList a = sm1->list->data[i];
-		elementArrayList b = sm2->list->data[j];
+    for (int j = 0; j < sizeArrayList(sm2->list); j++) {
+        elementArrayList nonZeroOfSum2
+            = getItemArrayList(sm2->list, j);
 
-		elementArrayList r;
+        int found = 0;
+        for (int i = 0; i < sizeArrayList(sm1->list); i++) {
+            elementArrayList nonZeroOfSum1
+                = getItemArrayList(sm1->list, i);
+            if (nonZeroOfSum1.row == nonZeroOfSum2.row &&
+                nonZeroOfSum1.col == nonZeroOfSum2.col) {
+                found = 1;
+                break;
+            }
+        }
 
-		if (a.row == b.row && a.col == b.col) {
+        if (!found) {
+            insertArrayList(smResult->list, sizeArrayList(smResult->list),
+                nonZeroOfSum2);
+        }
+    }
 
-			r.row = a.row;
-			r.col = a.col;
-			r.value = a.value + b.value;
-
-			i++; j++;
-
-		}
-		else if (a.row < b.row ||
-			(a.row == b.row && a.col < b.col)) {
-
-			r = a;
-			i++;
-
-		}
-		else {
-
-			r = b;
-			j++;
-		}
-
-		insertArrayList(smresult->list,
-			smresult->list->size,
-			r);
-	}
-
-	while (i < sm1->list->size)
-		insertArrayList(smresult->list,
-			smresult->list->size,
-			sm1->list->data[i++]);
-
-	while (j < sm2->list->size)
-		insertArrayList(smresult->list,
-			smresult->list->size,
-			sm2->list->data[j++]);
-
-	return smresult;
+    return smResult;
 }

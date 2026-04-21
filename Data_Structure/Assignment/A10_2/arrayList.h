@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct elementArrayListType {
@@ -22,11 +22,9 @@ extern int isFullArrayList(arrayList* al);
 extern int sizeArrayList(arrayList* al);
 extern int insertArrayList(arrayList* al,
 	int pos, elementArrayList item);
-extern int insertSortedArrayList(arrayList* al,
-	elementArrayList item);
 extern elementArrayList deleteArrayList(
 	arrayList* al, int pos);
-extern void initArrayList(arrayList* al);
+extern int initArrayList(arrayList* al);
 extern elementArrayList getItemArrayList(
 	arrayList* al, int pos);
 extern int replaceItemArrayList(arrayList* al,
