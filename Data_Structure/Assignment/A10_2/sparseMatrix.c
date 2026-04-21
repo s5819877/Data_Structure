@@ -19,7 +19,6 @@ void addElementSparseMatrix(sparseMatrix* sm, int row, int col, int value) {
 void printSparseMatrix(sparseMatrix* sm) {
     printf("Sparse Matrix (%d x %d):\n", sm->rows, sm->cols);
 
-    // 2D 행렬 형태로 출력
     for (int r = 0; r < sm->rows; r++) {
         for (int c = 0; c < sm->cols; c++) {
             int val = 0;
@@ -35,7 +34,6 @@ void printSparseMatrix(sparseMatrix* sm) {
         printf("\n");
     }
 
-    // 기존 리스트 출력
     printArrayList(sm->list);
     printf("\n");
 }
@@ -76,7 +74,7 @@ sparseMatrix* transposeSparseMatrix(sparseMatrix* sm, int* moveCount) {
                     (elementArrayList) {
                     e.col, e.row, e.value
                 });
-                (*moveCount)++;  // 삽입(쓰기)
+                (*moveCount)++;
             }
         }
     }
